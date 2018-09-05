@@ -34,8 +34,8 @@ var orm = {
     },
     
 
-    updateOne: function(table, col, value, col2, val2, cb) {
-        var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?"
+    updateOne: function(table, col, value, condition, cb) {
+        var queryString = "UPDATE ?? SET ?? = ? WHERE" + condition;
         connection.query(queryString, function(err, result) {
             if (err) {
                 throw err;
