@@ -28,13 +28,13 @@ var orm = {
     },
     
 
-    insertOne: function(table, cols, vals, cb) {
+    insertOne: function(table, col, val, cb) {
         var queryString = "INSERT INTO " + table;
-        queryString += "("
-        queryString += cols
+        queryString += " ("
+        queryString += col
         queryString += ") ";
         queryString += "VALUES (";
-        queryString += vals
+        queryString += val
         queryString += ");"
 
         console.log(queryString);

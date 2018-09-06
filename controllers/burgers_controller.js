@@ -41,6 +41,19 @@ router.get("/", function(req, res) {
         res.status(200).end();
       }
     });
+
+    router.post("/api/burgers", function(req, res) {
+      burger.insertOne([
+        "burger_name",
+        "devoured"
+      ], [
+        req.burger_name,
+        0
+      ], function(result) {
+        // Send back the ID of the new quote
+        res.json({ id: result.insertId });
+      });
+    });
   });
 
   module.exports = router;
