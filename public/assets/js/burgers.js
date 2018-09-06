@@ -10,10 +10,10 @@ $(function() {
 
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
-        data: newSleepState
+        data: newDevourState
       }).then(
         function() {
-          console.log("changed sleep to", newSleep);
+          console.log("changed devour to", newDevour);
           // Reload the page to get the updated list
           location.reload();
         }
