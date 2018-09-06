@@ -7,7 +7,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-xs-6">
             <ul class="uneaten">
                 <p>EAT THESE BURGERS!</p>
                 {{#each burgers}}
@@ -21,13 +21,14 @@
             </ul>
         </div>
 
-        <div class="col">
+        <div class="col-xs-6">
             <ul class="devoured">
                 <p>DEVOURED BURGERS</p>
                 <hr>
                 {{#each burgers}}
                     {{#if devoured}}
-                    <li>{{this.burger_name}}</li>
+                    <li> {{this.id}}
+                        {{this.burger_name}}</li>
                     {{/if}}
                 {{/each}}
             </ul>
@@ -35,6 +36,9 @@
     </div>
 </div>
 
+
+<center>
+    <div class="form">
 <h2>Add a Burger!</h2>
 <form class="create-form">
 
@@ -44,3 +48,5 @@
     <button type="submit">Add Burger</button>
     </div>
 </form>
+</div>
+</center>
