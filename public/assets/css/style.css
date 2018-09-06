@@ -1,0 +1,18 @@
+
+li {
+    padding: 5px;
+    margin: 5px;
+    list-style-type: none;
+    background: lightblue;
+  }
+
+ .devoured {
+    background:green;
+    width:10%;    
+}
+
+  .uneaten {
+    background: red;
+    width:10%;
+  }
+

@@ -1,21 +1,39 @@
+<center>
 
 <h1>Burger Town!</h1>
-
 <h2>Look at all these great Burgers!</h2>
 
-<ul>
-    {{#each burgers}}
-      {{#unless devoured}}
-      <li>{{this.id}}
-          <span>{{this.burger_name}}</li>
+</center>
 
-            <div class="form-group">
-            <button type="submit" name="devour"> DEVOUR!<br>
-          </span></div>
-      {{/unless}}
-  {{/each}}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <ul class="uneaten">
+                <p>EAT THESE BURGERS!</p>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <li>
+                    <span> {{this.burger_name}} </span>
+                <button class="change-devour" data-id="{{id}}" data-newDevour="{{devoured}}"> DEVOUR
+                </button>    </li>
+                {{/unless}}
+            {{/each}}
+            </ul>
+        </div>
 
-</ul>
+        <div class="col">
+            <ul class="devoured">
+                <p>DEVOURED BURGERS</p>
+                <hr>
+                {{#each burgers}}
+                    {{#if devoured}}
+                    <li>{{this.burger_name}}</li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
 
 <h2>Add a Burger!</h2>
 <form class="create-form">
@@ -23,6 +41,6 @@
   <div class="form-group">
     <label for="burg">Burger Name:</label>
     <input type="text" id="burg" name="burger_name">
-  </div>
     <button type="submit">Add Burger</button>
+    </div>
 </form>
